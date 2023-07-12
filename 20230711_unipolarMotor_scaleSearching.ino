@@ -16,9 +16,9 @@
 #define deg270 2940
 #define deg360 3980
 AccelStepper stepper = AccelStepper(MotorInterfaceType, MP1, MP3, MP2, MP4);//Define the pin sequence (IN1-IN3-IN2-IN4)
-const int SPR = 3980;//Steps per revolution
+const int SPR = 1035*4;//Steps per revolution
 
-int unit = int(round(SPR/4));
+int unit = 1035;
 //int unit=5;
 
 
