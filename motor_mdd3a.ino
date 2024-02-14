@@ -20,10 +20,6 @@
 
 #define mRev true
 #include <AccelStepper.h>
-//#define M1A  8 
-//#define M1B  9 
-//#define M2A  10 
-//#define M2B  11 
 #define MotorInterfaceType 4 // Full 4 wires (2-phase)
 #define MP1  8  //M1A
 #define MP2  9  //M1B
@@ -37,10 +33,6 @@ const int rev = int(round(SPR/4.0));
 //int unit = 1035;
 int unit=10;
 
-int v1a;
-int v1b;
-int v2a;
-int v2b;
 int inv(int steps)
 {
   return -steps;
@@ -48,10 +40,7 @@ int inv(int steps)
 void setup() {
   Serial.begin(9600);
   stepper.setMaxSpeed(100);//Set the maximum motor speed in steps per second
-  //stepper.setMaxSpeed(20);//Set the maximum motor speed in steps per second
   stepper.setAcceleration(50);//Set the maximum acceleration in steps per second^2
-  //stepper.setAcceleration(10);//Set the maximum acceleration in steps per second^2
-  pinMode(2,OUTPUT);
   pinMode(4,INPUT);//sw4
   pinMode(3,INPUT);//sw3
   stepper.setCurrentPosition(0.0);
